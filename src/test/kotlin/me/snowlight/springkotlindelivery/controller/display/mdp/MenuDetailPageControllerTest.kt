@@ -2,10 +2,10 @@ package me.snowlight.springkotlindelivery.controller.display.mdp
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import me.snowlight.springkotlindelivery.controller.display.mdp.dto.MenuDetailResponse
-import me.snowlight.springkotlindelivery.domain.menu.Menu
-import me.snowlight.springkotlindelivery.domain.store.Store
-import me.snowlight.springkotlindelivery.repository.MenuRepository
-import me.snowlight.springkotlindelivery.repository.StoreRepository
+import me.snowlight.springkotlindelivery.repository.menu.Menu
+import me.snowlight.springkotlindelivery.repository.store.Store
+import me.snowlight.springkotlindelivery.repository.menu.MenuRepository
+import me.snowlight.springkotlindelivery.repository.store.StoreRepository
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test

@@ -3,8 +3,8 @@ package me.snowlight.springkotlindelivery
 import com.fasterxml.jackson.databind.ObjectMapper
 import me.snowlight.springkotlindelivery.controller.display.sdp.StoreDetailPageController
 import me.snowlight.springkotlindelivery.controller.display.sdp.dto.StoreDetailResponse
-import me.snowlight.springkotlindelivery.domain.store.Store
-import me.snowlight.springkotlindelivery.repository.StoreRepository
+import me.snowlight.springkotlindelivery.repository.store.Store
+import me.snowlight.springkotlindelivery.repository.store.StoreRepository
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach

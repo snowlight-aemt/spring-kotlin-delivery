@@ -1,4 +1,4 @@
-package me.snowlight.springkotlindelivery.domain.menu
+package me.snowlight.springkotlindelivery.repository.menu
 
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
@@ -9,12 +9,10 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
-import jakarta.persistence.OneToMany
 import jakarta.persistence.Table
-import me.snowlight.springkotlindelivery.domain.store.Store
+import me.snowlight.springkotlindelivery.repository.store.Store
 import java.math.BigDecimal
 import java.time.LocalDateTime
-import kotlin.reflect.jvm.internal.impl.descriptors.deserialization.PlatformDependentDeclarationFilter.All
 
 @Entity
 @Table(name = "menus")

@@ -1,4 +1,4 @@
-package me.snowlight.springkotlindelivery.domain.store
+package me.snowlight.springkotlindelivery.repository.store
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity

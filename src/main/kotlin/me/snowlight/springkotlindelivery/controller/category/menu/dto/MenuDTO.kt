@@ -1,6 +1,6 @@
 package me.snowlight.springkotlindelivery.controller.category.menu.dto
 
-import me.snowlight.springkotlindelivery.domain.menu.Menu
+import me.snowlight.springkotlindelivery.repository.menu.Menu
 import java.math.BigDecimal
 
 

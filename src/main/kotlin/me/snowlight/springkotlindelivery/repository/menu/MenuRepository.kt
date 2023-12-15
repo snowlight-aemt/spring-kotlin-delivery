@@ -1,6 +1,5 @@
-package me.snowlight.springkotlindelivery.repository
+package me.snowlight.springkotlindelivery.repository.menu
 
-import me.snowlight.springkotlindelivery.domain.menu.Menu
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface MenuRepository : JpaRepository<Menu, Long> {

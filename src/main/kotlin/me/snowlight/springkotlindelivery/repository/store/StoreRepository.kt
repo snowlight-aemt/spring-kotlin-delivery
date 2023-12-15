@@ -1,6 +1,5 @@
-package me.snowlight.springkotlindelivery.repository
+package me.snowlight.springkotlindelivery.repository.store
 
-import me.snowlight.springkotlindelivery.domain.store.Store
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface StoreRepository : JpaRepository<Store, Long> {

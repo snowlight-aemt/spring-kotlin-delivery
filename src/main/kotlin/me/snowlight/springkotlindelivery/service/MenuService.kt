@@ -1,8 +1,8 @@
 package me.snowlight.springkotlindelivery.service
 
-import me.snowlight.springkotlindelivery.domain.menu.Menu
+import me.snowlight.springkotlindelivery.repository.menu.Menu
 import me.snowlight.springkotlindelivery.exception.NotFoundMenuException
-import me.snowlight.springkotlindelivery.repository.MenuRepository
+import me.snowlight.springkotlindelivery.repository.menu.MenuRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
