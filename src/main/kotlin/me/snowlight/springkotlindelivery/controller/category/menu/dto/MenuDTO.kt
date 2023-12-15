@@ -1,13 +1,14 @@
 package me.snowlight.springkotlindelivery.controller.category.menu.dto
 
 import me.snowlight.springkotlindelivery.domain.menu.Menu
+import java.math.BigDecimal
 
 
 data class MenuDTO (
     val menuId: Long,
     val menuName: String,
     val storeId: Long,
-    val price: Int,
+    val price: BigDecimal,
     val description: String,
     val menuImageUrl: String,
 ) {
