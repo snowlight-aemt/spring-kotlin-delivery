@@ -1,6 +1,8 @@
-package me.snowlight.springkotlindelivery.controller
+package me.snowlight.springkotlindelivery.controller.display.sdp
 
 import io.swagger.v3.oas.annotations.tags.Tag
+import me.snowlight.springkotlindelivery.controller.category.menu.dto.MenuDTO
+import me.snowlight.springkotlindelivery.controller.display.sdp.dto.StoreDetailResponse
 import me.snowlight.springkotlindelivery.service.MenuService
 import me.snowlight.springkotlindelivery.service.StoreService
 import org.springframework.http.ResponseEntity

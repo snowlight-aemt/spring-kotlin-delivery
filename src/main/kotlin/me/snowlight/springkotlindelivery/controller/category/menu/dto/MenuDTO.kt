@@ -1,4 +1,4 @@
-package me.snowlight.springkotlindelivery.controller
+package me.snowlight.springkotlindelivery.controller.category.menu.dto
 
 import me.snowlight.springkotlindelivery.domain.menu.Menu
 

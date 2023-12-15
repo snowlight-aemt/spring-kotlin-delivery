@@ -1,19 +1,15 @@
 package me.snowlight.springkotlindelivery
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import me.snowlight.springkotlindelivery.controller.StoreDetailPageController
-import me.snowlight.springkotlindelivery.controller.StoreDetailResponse
+import me.snowlight.springkotlindelivery.controller.display.sdp.StoreDetailPageController
+import me.snowlight.springkotlindelivery.controller.display.sdp.dto.StoreDetailResponse
 import me.snowlight.springkotlindelivery.domain.store.Store
 import me.snowlight.springkotlindelivery.repository.StoreRepository
-import org.aspectj.lang.annotation.Before
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
-import org.mockito.Mock
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
