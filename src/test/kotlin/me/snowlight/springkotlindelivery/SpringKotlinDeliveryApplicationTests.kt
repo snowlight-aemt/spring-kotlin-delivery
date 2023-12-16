@@ -3,6 +3,7 @@ package me.snowlight.springkotlindelivery
 import com.fasterxml.jackson.databind.ObjectMapper
 import me.snowlight.springkotlindelivery.controller.display.sdp.StoreDetailPageController
 import me.snowlight.springkotlindelivery.controller.display.sdp.dto.StoreDetailResponse
+import me.snowlight.springkotlindelivery.domain.store.StoreStatus
 import me.snowlight.springkotlindelivery.repository.store.Store
 import me.snowlight.springkotlindelivery.repository.store.StoreRepository
 import org.assertj.core.api.Assertions
@@ -17,6 +18,7 @@ import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import org.springframework.web.context.WebApplicationContext
+import java.math.BigDecimal
 import java.time.LocalDateTime
 
 @SpringBootTest
@@ -76,13 +78,12 @@ class SpringKotlinDeliveryApplicationTests {
             "수이 계정",
             "수이 은행",
             "ORDER",
-            false,
-            "/img/test/i1",
-            "상세한 내용",
-            LocalDateTime.now(),
-            null,
-            "test",
-            null
+            "DESCRIPT",
+            StoreStatus.READY,
+            BigDecimal(10_000),
+            "1100",
+            5,
+            BigDecimal(15_000),
         )
     }
 

@@ -13,11 +13,11 @@ data class MenuDTO (
     val menuImageUrl: String,
 ) {
     constructor(menu: Menu) : this(
-        menuId = menu.id,
+        menuId = menu.menuId,
         menuName = menu.menuName,
-        storeId = menu.store.id,
+        storeId = menu.storeId,
         price = menu.price,
         description = menu.description,
-        menuImageUrl = menu.menuImageUrl,
+        menuImageUrl = menu.menuMainImageUrl,
     )
 }

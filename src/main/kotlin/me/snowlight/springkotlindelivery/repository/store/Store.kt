@@ -2,33 +2,67 @@ package me.snowlight.springkotlindelivery.repository.store
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
+import jakarta.persistence.EnumType
+import jakarta.persistence.Enumerated
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
+import me.snowlight.springkotlindelivery.domain.store.StoreStatus
+import me.snowlight.springkotlindelivery.repository.BaseEntity
+import java.math.BigDecimal
 import java.time.LocalDateTime
 
 @Entity
-@Table(name = "stores")
-class Store (
+@Table(name = "stores", catalog = "food_delivery")
+class Store(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "store_id")
-    var id: Long = 0L,
-    var email: String,
-    var businessNumber: String,
-    var name: String,
-    var phone: String,
-    var address: String,
-    var password: String,
-    var bankAccount: String,
-    var bankName: String,
-    var status: String,
-    var isDeleted: Boolean,
-    var storeMainImageUrl: String,
-    var description: String,
-    var createdAt: LocalDateTime,
-    var updatedAt: LocalDateTime?,
-    var createdBy: String,
-    var updatedBy: String?
-)
+    val storeId: Long,
+
+    @Column(name = "email", nullable = false)
+    val email: String,
+
+    @Column(name = "business_number", nullable = false)
+    val businessNumber: String,
+
+    @Column(name = "name", nullable = false)
+    val storeName: String,
+
+    @Column(name = "main_image_url", nullable = false)
+    val storeMainImageUrl: String,
+
+    @Column(name = "phone", nullable = false)
+    val storePhone: String,
+
+    @Column(name = "address", nullable = false)
+    val address: String,
+
+    @Column(name = "password", nullable = false)
+    val password: String,
+
+    @Column(name = "bank_account", nullable = false)
+    val bankAccount: String,
+
+    @Column(name = "bank_name", nullable = false)
+    val bankName: String,
+
+    @Column(name = "description", nullable = false)
+    val description: String,
+
+    @Column(name = "status", nullable = false)
+    @Enumerated(value = EnumType.STRING)
+    val storeStatus: StoreStatus,
+
+    @Column(name = "delivery_fee", nullable = false)
+    val deliveryFee: BigDecimal,
+
+    @Column(name = "delivery_time", nullable = false)
+    val deliveryTime: String,
+
+    @Column(name = "review_grade", nullable = false)
+    val reviewGrade: Int,
+
+    @Column(name = "minimum_order_price", nullable = false)
+    val minimumOrderPrice: BigDecimal,
+): BaseEntity()

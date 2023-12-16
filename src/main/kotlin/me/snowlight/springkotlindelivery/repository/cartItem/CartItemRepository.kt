@@ -9,15 +9,15 @@ interface CartItemRepository: JpaRepository<CartItem, Long> {
     @Query("""
         select new me.snowlight.springkotlindelivery.domain.cart.CartMenu(
             c.cartId,
-            c.id,
+            c.cartItemId,
             c.menuId,
             m.menuName,
-            m.menuImageUrl,
+            m.menuMainImageUrl,
             m.price,
             c.quantity)
         from CartItem c
         left join Menu m
-          on c.menuId = m.id
+          on c.menuId = m.menuId
         where c.cartId = :cartId
           and c.isDeleted = false
           and m.isDeleted = false

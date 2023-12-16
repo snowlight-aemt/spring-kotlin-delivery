@@ -1,5 +1,6 @@
 package me.snowlight.springkotlindelivery.controller.display.mdp.dto
 
+import me.snowlight.springkotlindelivery.domain.catalog.menu.MenuStatus
 import java.math.BigDecimal
 
 data class MenuDetailResponse (
@@ -7,7 +8,7 @@ data class MenuDetailResponse (
     var menuName: String,
     var storeId: Long,
     var price: BigDecimal,
-    var menuStatus: String,
+    var menuStatus: MenuStatus,
     var description: String,
     var menuImageUrl: String,
 )

@@ -20,11 +20,11 @@ class StoreDetailPageController(
     @GetMapping("/display/stores/{storeId}")
     fun store(@PathVariable storeId: Long) : ResponseEntity<StoreDetailResponse> {
         val store = storeService.getStore(storeId)
-        val menus = menuService.getMenuByStoreId(store.id)
+        val menus = menuService.getMenuByStoreId(store.storeId)
 
-        return ok(StoreDetailResponse(storeId = store.id,
-            storeName = store.name,
-            phone = store.phone,
+        return ok(StoreDetailResponse(storeId = store.storeId,
+            storeName = store.storeName,
+            phone = store.storePhone,
             address = store.address,
             storeMainImageUrl = store.storeMainImageUrl,
             description = store.description,

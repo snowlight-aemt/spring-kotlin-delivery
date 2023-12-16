@@ -18,13 +18,13 @@ class MenuDetailPageController(
     fun detail(@PathVariable menuId: Long): ResponseEntity<MenuDetailResponse> {
         val menu = menuService.getMenuById(menuId);
         return ok(MenuDetailResponse(
-            menuId = menu.id,
+            menuId = menu.menuId,
             menuName = menu.menuName,
-            storeId = menu.store.id,
+            storeId = menu.storeId,
             price = menu.price,
-            menuStatus = menu.status,
+            menuStatus = menu.menuStatus,
             description = menu.description,
-            menuImageUrl = menu.menuImageUrl,
+            menuImageUrl = menu.menuMainImageUrl,
         ))
     }
 }
