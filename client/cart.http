@@ -1,0 +1,2 @@
+### 장바구니 API
+GET http://localhost:8080/apis/carts/items?customerId=1

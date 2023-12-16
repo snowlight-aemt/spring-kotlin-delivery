@@ -7,7 +7,7 @@ data class StoreDetailResponse (
     val storeName: String,
     val phone: String,
     val address: String,
-    val storeMainImageUrl: String,
-    val description: String,
+    val storeMainImageUrl: String?,
+    val description: String?,
     val menus: List<MenuDTO>
 )
