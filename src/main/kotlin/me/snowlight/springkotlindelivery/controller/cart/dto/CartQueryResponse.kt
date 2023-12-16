@@ -1,16 +1,14 @@
 package me.snowlight.springkotlindelivery.controller.cart.dto
 
 import me.snowlight.springkotlindelivery.domain.cart.CartMenu
-import me.snowlight.springkotlindelivery.repository.cartItem.CartItem
 import java.math.BigDecimal
 
-data class CartResponse (
-    val responseCode: Int,
-    val responseMessage: String,
-    val data: List<CartItemDto>
+data class CartQueryResponse (
+    val customerId: Long,
+    val menus: List<CartMenuDTO>
 )
 
-data class CartItemDto (
+data class CartMenuDTO (
     val cartItemId: Long,
     val menuId: Long,
     val menuName: String,
@@ -19,8 +17,8 @@ data class CartItemDto (
     val totalPrice: BigDecimal,
 ) {
     companion object {
-        fun from(cartItem: CartMenu): CartItemDto {
-            return CartItemDto(
+        fun from(cartItem: CartMenu): CartMenuDTO {
+            return CartMenuDTO(
                 cartItemId = cartItem.cartItemId,
                 menuId = cartItem.menuId,
                 menuName = cartItem.menuName,
