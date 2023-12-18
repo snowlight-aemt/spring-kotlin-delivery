@@ -1,0 +1,9 @@
+### 체크아웃 API
+POST http://localhost:8080/apis/checkout
+Content-Type: application/json
+
+{
+  "discountId": 1,
+  "storeId": 1,
+  "customerId": 1
+}

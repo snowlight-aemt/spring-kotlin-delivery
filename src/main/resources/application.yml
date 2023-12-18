@@ -8,3 +8,6 @@ spring:
     password: snow
     url: jdbc:mysql://localhost:13306/food_delivery?useSSL=false&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  role-name: delivery-api
