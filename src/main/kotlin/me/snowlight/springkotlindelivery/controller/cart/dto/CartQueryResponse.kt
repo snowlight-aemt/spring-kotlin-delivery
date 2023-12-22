@@ -5,7 +5,7 @@ import java.math.BigDecimal
 
 data class CartQueryResponse (
     val customerId: Long,
-    val menus: List<CartMenuDTO>
+    val cartItems: List<CartMenuDTO>
 )
 
 data class CartMenuDTO (

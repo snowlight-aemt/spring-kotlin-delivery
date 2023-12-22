@@ -11,7 +11,6 @@ import me.snowlight.springkotlindelivery.controller.cart.dto.CartQueryRequest
 import me.snowlight.springkotlindelivery.controller.cart.dto.CartQueryResponse
 import me.snowlight.springkotlindelivery.service.cart.CartService
 import me.snowlight.springkotlindelivery.service.cartItem.CartItemService
-import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.http.ResponseEntity.ok
 import org.springframework.web.bind.annotation.GetMapping
@@ -48,7 +47,7 @@ class CartController(
 
         return ok(CartQueryResponse(
             customerId = request.customerId,
-            menus = cartMenusDTO,
+            cartItems = cartMenusDTO,
         ))
     }
 }

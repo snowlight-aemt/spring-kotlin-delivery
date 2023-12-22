@@ -96,8 +96,8 @@ class CartControllerTest {
             CartQueryResponse::class.java
         )
         assertThat(cartQueryResponse.customerId).isEqualTo(customerId)
-        assertThat(cartQueryResponse.menus.size).isGreaterThanOrEqualTo(1)
-        cartQueryResponse.menus.forEach {
+        assertThat(cartQueryResponse.cartItems.size).isGreaterThanOrEqualTo(1)
+        cartQueryResponse.cartItems.forEach {
             assertThat(it.menuId).isEqualTo(menu.menuId)
             assertThat(it.menuName).isEqualTo(menu.menuName)
             assertThat(it.menuImageUrl).isEqualTo(menu.menuMainImageUrl)
