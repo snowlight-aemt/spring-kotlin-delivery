@@ -1,2 +1,2 @@
 ###
-GET http://localhost:8080/display/menu/1
+GET http://localhost:8081/apis/display/menu/1?storeId=2
