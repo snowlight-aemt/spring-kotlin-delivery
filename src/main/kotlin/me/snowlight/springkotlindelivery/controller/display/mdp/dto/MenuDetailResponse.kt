@@ -10,5 +10,5 @@ data class MenuDetailResponse (
     var price: BigDecimal,
     var menuStatus: MenuStatus,
     var description: String,
-    var menuImageUrl: String,
+    var menuMainImageUrl: String,
 )

@@ -33,7 +33,7 @@ class MenuDetailPageController(
             price = menu.price,
             menuStatus = menu.menuStatus,
             description = menu.description,
-            menuImageUrl = menu.menuMainImageUrl,
+            menuMainImageUrl = menu.menuMainImageUrl,
         ))
     }
 }
