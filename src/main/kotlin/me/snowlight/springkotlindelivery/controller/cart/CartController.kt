@@ -9,12 +9,16 @@ import io.swagger.v3.oas.annotations.tags.Tag
 import me.snowlight.springkotlindelivery.controller.cart.dto.CartMenuDTO
 import me.snowlight.springkotlindelivery.controller.cart.dto.CartQueryRequest
 import me.snowlight.springkotlindelivery.controller.cart.dto.CartQueryResponse
+import me.snowlight.springkotlindelivery.service.cart.AddCartItem
 import me.snowlight.springkotlindelivery.service.cart.CartService
 import me.snowlight.springkotlindelivery.service.cartItem.CartItemService
 import org.springframework.http.ResponseEntity
 import org.springframework.http.ResponseEntity.ok
+import org.springframework.web.bind.annotation.CookieValue
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 @Tag(name = "CartController")
@@ -48,6 +52,25 @@ class CartController(
         return ok(CartQueryResponse(
             customerId = request.customerId,
             cartItems = cartMenusDTO,
+        ))
+    }
+
+    @PostMapping("/apis/carts/items")
+    fun insert(
+        @RequestBody request: CartItemAddRequest,
+    ): ResponseEntity<CartItemAddResponse> {
+        val addCartItem = AddCartItem(
+            storeId = request.storeId,
+            menuId = request.menuId,
+            quantity = request.quantity,
+            customerId = request.customerId,
+        )
+        cartService.upset(addCartItem)
+
+        return ok(CartItemAddResponse(
+            storeId = request.storeId,
+            menuId = request.menuId,
+            quantity = request.quantity,
         ))
     }
 }
