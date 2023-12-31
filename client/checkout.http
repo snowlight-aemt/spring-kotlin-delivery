@@ -7,3 +7,6 @@ Content-Type: application/json
   "storeId": 1,
   "customerId": 1
 }
+
+### 체크아웃 아이템 조회 API
+GET http://localhost:8081/apis/checkout?customerId=1

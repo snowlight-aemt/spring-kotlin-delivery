@@ -1,6 +1,8 @@
 package me.snowlight.springkotlindelivery.service.checkout
 
+import me.snowlight.springkotlindelivery.controller.checkout.dto.CheckoutListRequest
 import me.snowlight.springkotlindelivery.domain.cart.CartMenu
+import me.snowlight.springkotlindelivery.exception.NotFoundCheckoutException
 import me.snowlight.springkotlindelivery.repository.checkout.Checkout
 import me.snowlight.springkotlindelivery.repository.checkout.CheckoutRepository
 import me.snowlight.springkotlindelivery.repository.checkoutdiscount.CheckoutDiscountItem
@@ -93,5 +95,13 @@ class CheckoutService(
         checkoutDiscountItem.updatedBy = roleName
 
         checkoutDiscountItemRepository.save(checkoutDiscountItem)
+    }
+
+    fun checkout(checkoutListRequest: CheckoutListRequest): Checkout {
+        return checkoutRepository.findByCustomerId(checkoutListRequest.customerId) ?: throw NotFoundCheckoutException()
+    }
+
+    fun checkoutItems(checkoutId: Long): List<CheckoutItem> {
+        return checkoutItemRepository.findByCheckoutId(checkoutId)
     }
 }
