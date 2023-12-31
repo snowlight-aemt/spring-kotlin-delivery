@@ -1,0 +1,5 @@
+###
+GET http://localhost:8081/apis/order-history?customerId=1&orderStatus=READY
+
+###
+POST http://localhost:8081/apis/orders?checkoutId=77782
