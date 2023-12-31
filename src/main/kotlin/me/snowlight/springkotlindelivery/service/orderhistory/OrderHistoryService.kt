@@ -16,12 +16,9 @@ import org.springframework.transaction.annotation.Transactional
 class OrderHistoryService(
     private val orderRepository: OrderRepository,
     private val orderItemRepository: OrderItemRepository,
-    private val checkoutRepository: CheckoutRepository,
-    private val checkoutItemResponse: CheckoutItemRepository,
-    private val discountItemRepository: CheckoutDiscountItemRepository,
 ) {
     fun list(request: OrderHistoryRequest): List<OrderHistory> {
-        val orderStoreList = orderRepository.findAllByOrderId(request.customerId, OrderStatus.READY)
+        val orderStoreList = orderRepository.findAllByOrderId(request.customerId, request.orderStatus)
 
         return orderStoreList.map { it ->
             val orderItemMenu = orderItemRepository.findByIdOrIsDeleted(it.orderId)
