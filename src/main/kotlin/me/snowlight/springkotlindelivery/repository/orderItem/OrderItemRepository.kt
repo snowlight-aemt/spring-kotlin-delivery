@@ -20,5 +20,5 @@ interface OrderItemRepository: JpaRepository<OrderItem, Long> {
          where oi.orderId = :orderId
            and oi.isDeleted = false
     """)
-    fun findByIdOrIsDeleted(orderId: Long): List<OrderItemMenu>
+    fun findAllByOrderId(orderId: Long): List<OrderItemMenu>
 }
